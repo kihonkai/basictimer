@@ -28,18 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBoxStartTimers = new System.Windows.Forms.GroupBox();
-            this.button3Min = new System.Windows.Forms.Button();
-            this.button5Min = new System.Windows.Forms.Button();
-            this.button15Min = new System.Windows.Forms.Button();
-            this.button25Min = new System.Windows.Forms.Button();
-            this.button30Min = new System.Windows.Forms.Button();
-            this.button45Min = new System.Windows.Forms.Button();
             this.button60Min = new System.Windows.Forms.Button();
+            this.button45Min = new System.Windows.Forms.Button();
+            this.button30Min = new System.Windows.Forms.Button();
+            this.button25Min = new System.Windows.Forms.Button();
+            this.button15Min = new System.Windows.Forms.Button();
+            this.button5Min = new System.Windows.Forms.Button();
+            this.button3Min = new System.Windows.Forms.Button();
             this.groupBoxTimer = new System.Windows.Forms.GroupBox();
             this.labelTimer = new System.Windows.Forms.Label();
             this.groupBoxControls = new System.Windows.Forms.GroupBox();
             this.buttonStopTimer = new System.Windows.Forms.Button();
+            this.timerMain = new System.Windows.Forms.Timer(this.components);
             this.groupBoxStartTimers.SuspendLayout();
             this.groupBoxTimer.SuspendLayout();
             this.groupBoxControls.SuspendLayout();
@@ -61,50 +63,16 @@
             this.groupBoxStartTimers.TabStop = false;
             this.groupBoxStartTimers.Text = "Start Timers";
             // 
-            // button3Min
+            // button60Min
             // 
-            this.button3Min.Location = new System.Drawing.Point(6, 17);
-            this.button3Min.Name = "button3Min";
-            this.button3Min.Size = new System.Drawing.Size(75, 23);
-            this.button3Min.TabIndex = 0;
-            this.button3Min.Text = "3 Mins";
-            this.button3Min.UseVisualStyleBackColor = true;
-            // 
-            // button5Min
-            // 
-            this.button5Min.Location = new System.Drawing.Point(87, 17);
-            this.button5Min.Name = "button5Min";
-            this.button5Min.Size = new System.Drawing.Size(75, 23);
-            this.button5Min.TabIndex = 1;
-            this.button5Min.Text = "5 Mins";
-            this.button5Min.UseVisualStyleBackColor = true;
-            // 
-            // button15Min
-            // 
-            this.button15Min.Location = new System.Drawing.Point(168, 17);
-            this.button15Min.Name = "button15Min";
-            this.button15Min.Size = new System.Drawing.Size(75, 23);
-            this.button15Min.TabIndex = 2;
-            this.button15Min.Text = "15 Mins";
-            this.button15Min.UseVisualStyleBackColor = true;
-            // 
-            // button25Min
-            // 
-            this.button25Min.Location = new System.Drawing.Point(249, 17);
-            this.button25Min.Name = "button25Min";
-            this.button25Min.Size = new System.Drawing.Size(75, 23);
-            this.button25Min.TabIndex = 3;
-            this.button25Min.Text = "25 Mins";
-            this.button25Min.UseVisualStyleBackColor = true;
-            // 
-            // button30Min
-            // 
-            this.button30Min.Location = new System.Drawing.Point(330, 17);
-            this.button30Min.Name = "button30Min";
-            this.button30Min.Size = new System.Drawing.Size(75, 23);
-            this.button30Min.TabIndex = 4;
-            this.button30Min.Text = "30 Mins";
-            this.button30Min.UseVisualStyleBackColor = true;
+            this.button60Min.Location = new System.Drawing.Point(492, 17);
+            this.button60Min.Name = "button60Min";
+            this.button60Min.Size = new System.Drawing.Size(75, 23);
+            this.button60Min.TabIndex = 6;
+            this.button60Min.Tag = "60";
+            this.button60Min.Text = "60 Mins";
+            this.button60Min.UseVisualStyleBackColor = true;
+            this.button60Min.Click += new System.EventHandler(this.Button_Click);
             // 
             // button45Min
             // 
@@ -112,17 +80,65 @@
             this.button45Min.Name = "button45Min";
             this.button45Min.Size = new System.Drawing.Size(75, 23);
             this.button45Min.TabIndex = 5;
+            this.button45Min.Tag = "45";
             this.button45Min.Text = "45 Mins";
             this.button45Min.UseVisualStyleBackColor = true;
+            this.button45Min.Click += new System.EventHandler(this.Button_Click);
             // 
-            // button60Min
+            // button30Min
             // 
-            this.button60Min.Location = new System.Drawing.Point(492, 17);
-            this.button60Min.Name = "button60Min";
-            this.button60Min.Size = new System.Drawing.Size(75, 23);
-            this.button60Min.TabIndex = 6;
-            this.button60Min.Text = "60 Mins";
-            this.button60Min.UseVisualStyleBackColor = true;
+            this.button30Min.Location = new System.Drawing.Point(330, 17);
+            this.button30Min.Name = "button30Min";
+            this.button30Min.Size = new System.Drawing.Size(75, 23);
+            this.button30Min.TabIndex = 4;
+            this.button30Min.Tag = "30";
+            this.button30Min.Text = "30 Mins";
+            this.button30Min.UseVisualStyleBackColor = true;
+            this.button30Min.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // button25Min
+            // 
+            this.button25Min.Location = new System.Drawing.Point(249, 17);
+            this.button25Min.Name = "button25Min";
+            this.button25Min.Size = new System.Drawing.Size(75, 23);
+            this.button25Min.TabIndex = 3;
+            this.button25Min.Tag = "25";
+            this.button25Min.Text = "25 Mins";
+            this.button25Min.UseVisualStyleBackColor = true;
+            this.button25Min.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // button15Min
+            // 
+            this.button15Min.Location = new System.Drawing.Point(168, 17);
+            this.button15Min.Name = "button15Min";
+            this.button15Min.Size = new System.Drawing.Size(75, 23);
+            this.button15Min.TabIndex = 2;
+            this.button15Min.Tag = "15";
+            this.button15Min.Text = "15 Mins";
+            this.button15Min.UseVisualStyleBackColor = true;
+            this.button15Min.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // button5Min
+            // 
+            this.button5Min.Location = new System.Drawing.Point(87, 17);
+            this.button5Min.Name = "button5Min";
+            this.button5Min.Size = new System.Drawing.Size(75, 23);
+            this.button5Min.TabIndex = 1;
+            this.button5Min.Tag = "5";
+            this.button5Min.Text = "5 Mins";
+            this.button5Min.UseVisualStyleBackColor = true;
+            this.button5Min.Click += new System.EventHandler(this.Button_Click);
+            // 
+            // button3Min
+            // 
+            this.button3Min.Location = new System.Drawing.Point(6, 17);
+            this.button3Min.Name = "button3Min";
+            this.button3Min.Size = new System.Drawing.Size(75, 23);
+            this.button3Min.TabIndex = 0;
+            this.button3Min.Tag = "3";
+            this.button3Min.Text = "3 Mins";
+            this.button3Min.UseVisualStyleBackColor = true;
+            this.button3Min.Click += new System.EventHandler(this.Button_Click);
             // 
             // groupBoxTimer
             // 
@@ -143,7 +159,7 @@
             this.labelTimer.Name = "labelTimer";
             this.labelTimer.Size = new System.Drawing.Size(569, 125);
             this.labelTimer.TabIndex = 0;
-            this.labelTimer.Text = "00:00";
+            this.labelTimer.Text = "00:00:00";
             this.labelTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBoxControls
@@ -164,6 +180,12 @@
             this.buttonStopTimer.TabIndex = 1;
             this.buttonStopTimer.Text = "Stop Timer";
             this.buttonStopTimer.UseVisualStyleBackColor = true;
+            this.buttonStopTimer.Click += new System.EventHandler(this.buttonStopTimer_Click);
+            // 
+            // timerMain
+            // 
+            this.timerMain.Interval = 1000;
+            this.timerMain.Tick += new System.EventHandler(this.timerMain_Tick);
             // 
             // FormMain
             // 
@@ -196,6 +218,7 @@
         private System.Windows.Forms.Label labelTimer;
         private System.Windows.Forms.GroupBox groupBoxControls;
         private System.Windows.Forms.Button buttonStopTimer;
+        private System.Windows.Forms.Timer timerMain;
     }
 }
 

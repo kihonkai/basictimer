@@ -1,7 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTimerWinForms", "BasicTimerWinForms\BasicTimerWinForms.csproj", "{5AE4EA7C-8975-41E0-8725-98BDB40C8E3A}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AE4EA7C-8975-41E0-8725-98BDB40C8E3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE4EA7C-8975-41E0-8725-98BDB40C8E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE4EA7C-8975-41E0-8725-98BDB40C8E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE4EA7C-8975-41E0-8725-98BDB40C8E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
