@@ -88,5 +88,13 @@ namespace BasicTimerWinForms
             this.timerMain.Enabled = false;
             SetControlState(ControlState.TimerStopped);
         }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            using (AboutBox form = new AboutBox())
+            {
+                form.ShowDialog();
+            }
+        }
     }
 }

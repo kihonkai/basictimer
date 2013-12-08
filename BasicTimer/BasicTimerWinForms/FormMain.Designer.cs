@@ -42,6 +42,7 @@
             this.groupBoxControls = new System.Windows.Forms.GroupBox();
             this.buttonStopTimer = new System.Windows.Forms.Button();
             this.timerMain = new System.Windows.Forms.Timer(this.components);
+            this.buttonAbout = new System.Windows.Forms.Button();
             this.groupBoxStartTimers.SuspendLayout();
             this.groupBoxTimer.SuspendLayout();
             this.groupBoxControls.SuspendLayout();
@@ -164,6 +165,7 @@
             // 
             // groupBoxControls
             // 
+            this.groupBoxControls.Controls.Add(this.buttonAbout);
             this.groupBoxControls.Controls.Add(this.buttonStopTimer);
             this.groupBoxControls.Location = new System.Drawing.Point(12, 214);
             this.groupBoxControls.Name = "groupBoxControls";
@@ -186,6 +188,16 @@
             // 
             this.timerMain.Interval = 1000;
             this.timerMain.Tick += new System.EventHandler(this.timerMain_Tick);
+            // 
+            // buttonAbout
+            // 
+            this.buttonAbout.Location = new System.Drawing.Point(492, 17);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(75, 23);
+            this.buttonAbout.TabIndex = 2;
+            this.buttonAbout.Text = "About";
+            this.buttonAbout.UseVisualStyleBackColor = true;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // FormMain
             // 
@@ -219,6 +231,7 @@
         private System.Windows.Forms.GroupBox groupBoxControls;
         private System.Windows.Forms.Button buttonStopTimer;
         private System.Windows.Forms.Timer timerMain;
+        private System.Windows.Forms.Button buttonAbout;
     }
 }
 
